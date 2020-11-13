@@ -14,9 +14,10 @@ namespace dotnet
             Console.WriteLine("#Begin" + "\n");
 
             Console.WriteLine("Informe seu nome");
+
             nome = Console.ReadLine().ToUpper();
 
-            if (nome != "Jose da Silva".ToUpper())
+            if (nome != "Jose".ToUpper())
             {
                 Console.WriteLine($"Seja Bem vindo !  {nome}");
             }
@@ -24,14 +25,21 @@ namespace dotnet
             {
                 ExibirMensagemCobrança(nome);
                 string status = "";
-                if (status == "S")
-                {
-
-                }
-                else
-                {
+                    do{
+                        Console.WriteLine("Deseja Quitar a divida e realizar sua matricula ? \n Pressione 1 para Sim ou 2 para Não");
+                        if((status =Console.ReadLine()) == "1"){
+                            status = "S";
+                        }else{
+                            Console.WriteLine("Tem certeza ?");
+                            if((status = Console.ReadLine()) == "1"){
+                                status = "S";
+                                //exibe a mensagem e saiu da aplicação
+                            }
+                        }
+                    }while(status != "S");
+               
                     Exibir_Mensagem(aviso);
-                }
+                
             }
 
             Console.WriteLine("#End" + "\n");
