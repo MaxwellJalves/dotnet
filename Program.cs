@@ -47,11 +47,13 @@ namespace dotnet
 
             if(c.cd_aluno.Equals(p.getMatricula())){
                 Console.WriteLine("Código de matricula vinculado a outro aluno");
+                c.cd_aluno = p.getMatricula()+1;
+                Console.WriteLine($"Não se preocupe ! \n  Verificamos que você é um novo(a) Aluno(a) \n Seu código de matricula é : Nº {c.cd_aluno}");
             }
 
             if (p.getNome().ToUpper() != "Jose".ToUpper())
             {
-                Console.WriteLine($"Seja Bem vindo !  {p.getNome().ToUpper()} \n Aluno do Curso : {c.descricao.ToUpper()}");
+                Console.WriteLine($"Seja Bem vindo(a) ! \n {p.getNome().ToUpper()} \n Curso : {c.descricao.ToUpper()}");
             }
             else
             {
